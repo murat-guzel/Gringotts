@@ -14,10 +14,6 @@
  ```
 ## Setup Notes
 
- 
-
- 
-
 
 
 ## Scipts
@@ -74,7 +70,8 @@ CREATE TABLE [dbo].[User](
  CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON,
+ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
  
@@ -89,6 +86,34 @@ CREATE TABLE [dbo].[User](
 
 ## Responses
 
+### Success
+ ```Json
+{
+  "customers": [
+    {
+      "name": "Murat",
+      "surname": "Güzel"
+    },
+    {
+      "name": "John",
+      "surname": "Doe"
+    }
+  ],
+  "header": {
+    "statusCode": 0,
+    "message": "Success"
+  }
+}
+ 
+``` 
+### Failed
+ ```Json
+{
+  "statusCode": 1001,
+  "message": "Insufficient Balance"
+}
+ 
+``` 
 
 ## Endpoints
 
