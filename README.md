@@ -14,9 +14,14 @@
  ```
 ## Setup Notes
 
+Please update the information below.
 
+```
+DB Connection : appsettings.json
+Docker : launchSettings.json
 
-## Scipts
+```
+## Scripts
 
 ```sql
 CREATE TABLE [dbo].[Account](
