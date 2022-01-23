@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace Gringotts_WebApi.Entities
 {
-    public class Transaction
-    {
-        public string Type { get; set; }
-
+    public class Trnx
+    { 
         public int AccountId { get; set; }
 
         public decimal Amount { get; set; }
+
+        public DateTime RequestDate { get; set; }
     }
 }
