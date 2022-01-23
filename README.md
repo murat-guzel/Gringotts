@@ -1,4 +1,4 @@
-## Technology
+## Technologies
 
 - .NET 5.0
 - SWAGGER
@@ -33,8 +33,55 @@ CREATE TABLE [dbo].[Account](
  CONSTRAINT [PK_Account] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON,
+ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+ 
+CREATE TABLE [dbo].[Customer](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](150) NULL,
+	[Surname] [nvarchar](150) NULL,
+ CONSTRAINT [PK_Customer] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON,
+ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+ 
+ 
+
+CREATE TABLE [dbo].[Trnx](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Type] [nvarchar](150) NULL,
+	[AccountId] [int] NULL,
+	[Amount] [decimal](4, 2) NULL,
+	[RequestDate] [datetime] NULL,
+ CONSTRAINT [PK_Trnx] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, 
+ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+ 
+CREATE TABLE [dbo].[User](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Username] [nvarchar](250) NULL,
+	[Hash] [nvarchar](500) NULL,
+	[Email] [nvarchar](250) NULL,
+	[Password] [nvarchar](150) NULL,
+ CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
+
+ 
+
+
+
+
 
 ```
 
